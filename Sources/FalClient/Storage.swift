@@ -104,7 +104,7 @@ struct StorageClient: Storage {
     }
 
     func upload(data: Data, ofType type: FileType) async throws -> String {
-        let uploadUrl = try await initiateUpload(data: data, ofType: type)
+        let uploadUrl = try await initiateUpload(ofType: type)
 
         // Upload the file to the upload URL.
         // Here we use URLSession directly instead of the client to avoid going
