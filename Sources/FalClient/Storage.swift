@@ -90,7 +90,7 @@ struct StorageClient: Storage {
         return transformedInput
     }
 
-    func initiateUpload(data _: Data, ofType type: FileType) async throws -> UploadUrl {
+    func initiateUpload(ofType type: FileType) async throws -> UploadUrl {
         let input: Payload = [
             "content_type": .string(type.mimeType),
             "file_name": .string("\(UUID().uuidString).\(type.fileExtension)"),
